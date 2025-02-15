@@ -1,8 +1,12 @@
 import ResultContent from "./result-content";
 import { Suspense } from "react";
 
-export default async function ResultPage({ params }: { params: { makeId: string; year: string } }) {
-  const { makeId, year } = await params; 
+export default async function ResultPage({
+  params,
+}: {
+  params: { makeId: string; year: string };
+}) {
+  const { makeId, year } = await params;
 
   return (
     <div className="min-h-screen bg-gray-100 p-6">

@@ -1,6 +1,12 @@
 import { getCarModels } from "@/lib/api";
 
-export default async function ResultContent({ makeId, year }: { makeId: string; year: string }) {
+export default async function ResultContent({
+  makeId,
+  year,
+}: {
+  makeId: string;
+  year: string;
+}) {
   const models = await getCarModels(makeId, year);
 
   return models.length > 0 ? (
