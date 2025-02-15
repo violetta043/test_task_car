@@ -4,8 +4,9 @@ interface CarModel {
   }
 
 export async function getCarModels(makeId: string, year: string): Promise<CarModel[]> {
+    const API_URL = process.env.NEXT_PUBLIC_API_URL;
     const res = await fetch(
-      `https://vpic.nhtsa.dot.gov/api/vehicles/GetModelsForMakeIdYear/makeId/${makeId}/modelyear/${year}?format=json`
+      `${API_URL}/vehicles/GetModelsForMakeIdYear/makeId/${makeId}/modelyear/${year}?format=json`
     );
   
     if (!res.ok) throw new Error("Failed to fetch car models.");
